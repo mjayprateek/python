@@ -1,11 +1,10 @@
-# python
+# **Python**
 All python code resides here
 
-Independent projects:
-1) Python image processing/text image segmentation
-2) subtitle_synchronizer
+## **Independent projects**
+- Python image processing/text image segmentation: for extracting images of individual text characters from an image of any text.
+- subtitle_synchronizer: for manually shifting the subtitles forward or backward.
 
-Projects as part of learning:
-1) neural networks  - contains the code taught in the book at http://neuralnetworksanddeeplearning.com
-2) crawler - contains the code taught in the book Collective Intelligence
-
+## **Projects as part of learning**
+- neural networks: contains the code taught in the book at [http://neuralnetworksanddeeplearning.com](http://neuralnetworksanddeeplearning.com)
+- crawler: contains the code taught in the book Collective Intelligence.
