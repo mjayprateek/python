@@ -1,10 +1,10 @@
 # About python text image segmentor
 
-This image segmentor is intended to separate individual text characters 
-from the image of typed/non-cursive hand-written texts. These individual character images
-then can be processed and used for hand-written characters recognition.
+This image segmentor extracts images of individual characters (alphabets or numbers) 
+from an image of typed and non-cursive hand-written text. These individual character images
+then can be processed and used as an input for character recognition ML algorithms.
 
-The alogrithm is very crude and brute force. Moreover, to use these images for
+The alogrithm for extracting characters out of text is very crude and brute force. Moreover, to use these images for
 some ML system, one needs to do some post-processing and normalization of the
 image sizes.
 
@@ -14,11 +14,7 @@ the code it worked out to be 190. I achieve this threshold by zooming-in on the 
 and closely looking at the pixel values of the text characters and of the whitespaces
 which separate these texts. Basically, what we are doing is this: given a text_color_threshold (below which every pixel value is a text), identify the empty rows (the ones with all pixels below text_color_threshold)
 
-2. Then, iterate over all columns, over each pair of rows with 
-length > 1 (that will ensure we are not going through empty rows). Collect those
-column indices for which percentage of text pixels is less than text_color_per_column_percent 
-within given pair of rows are white. The boundaries of such columns alongwith the empty rows 
-will be used to segment the images
+2. Once the program has the indices of rows which comprises the text, it iterates over all the columns of these rows to figure out which columns of pixels can be considered as white spaces. This is achieved by comparing the percentage of text pixels present in a column with the threshold specified by text_color_per_column_percent. If the percentage of text pixels in a column is less than text_color_per_column_percent, then that column can be taken as a white space separating the chracter pixels. Once the program has the indices of all white space columns within a text row, the boundaries of such columns alongwith the empty rows is used to segment the image into individual characters.
 
 3. usage:
  - segmentor = Segmentor(text_color_threshold=190, text_color_per_column_percent=5)
