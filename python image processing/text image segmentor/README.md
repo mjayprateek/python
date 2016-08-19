@@ -1,7 +1,7 @@
 # About python text image segmentor
 
 This image segmentor is intended to separate individual text characters 
-from the image of hand-written/typed texts. These individual character images
+from the image of typed/non-cursive hand-written texts. These individual character images
 then can be processed and used for hand-written characters recognition.
 
 The alogrithm is very crude and brute force. Moreover, to use these images for
